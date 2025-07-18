@@ -5,7 +5,7 @@ if (!catched) {
     catched = global.mongoose = { conn: null, promise: null }
 }
 
-async function dbConnect() {
+async function connectDB() {
     if (catched.conn) {
         return catched.conn
     }
