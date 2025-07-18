@@ -14,7 +14,7 @@ async function connectDB() {
         const opts = {
             bufferCommands: false,
         }
-        catched.promise = mongoose.connect(process.env.MONGODB_URI, opts).then((mongoose) => {
+        catched.promise = mongoose.connect(`${process.env.MONGODB_URI}/hustlemobe`, opts).then(mongoose => {
             return mongoose
         })
     }

@@ -3,7 +3,7 @@ import connectDB from "./db";
 import User from "@/models/User";
 
 // Create a client to send and receive events
-export const inngest = new Inngest({ id: "HustlemobLifestyle" });
+export const inngest = new Inngest({ id: "Hustlemobe" });
 
 
 // Inngest Function to save user to a database
@@ -13,7 +13,7 @@ export const syncUserCreation = inngest.createFunction(
     },
     { event: 'clerk/user.created'},
     async ({event}) => {
-        const { id, first_name, last_name, email_addresses, image_url } = event.data; 
+        const { id, first_name, last_name, email_addresses, image_url } = event.data
         const userData = {
             _id: id,
             email: email_addresses[0].email_address,
@@ -32,7 +32,7 @@ export const syncUserUpdation = inngest.createFunction(
     },
     { event: 'clerk/user.updated'},
     async ({event}) => {
-        const { id, first_name, last_name, email_addresses, image_url } = event.data; 
+        const { id, first_name, last_name, email_addresses, image_url } = event.data
         const userData = {
             _id: id,
             email: email_addresses[0].email_address,
@@ -40,9 +40,9 @@ export const syncUserUpdation = inngest.createFunction(
             imageUrl: image_url,
         };
         await connectDB();
-        await User.findByIdAndUpdate(id, userData, { new: true });
+        await User.findByIdAndUpdate(id, userData)
     }
-);
+)
 // Inngest Function to delete user from the database
 export const syncUserDeletion = inngest.createFunction(
     {
@@ -51,9 +51,9 @@ export const syncUserDeletion = inngest.createFunction(
     { event: 'clerk/user.deleted'},
     async ({event}) => {
         
-        const { id } = event.data; 
+        const { id } = event.data
 
-        await connectDB();
-        await User.findByIdAndDelete(id);
+        await connectDB()
+        await User.findByIdAndDelete(id)
     }
 )

@@ -7,7 +7,7 @@ export const products = [
     description: "Noise-cancellation, 40-hour battery",
     rating: 4.5,
     price: "$299.99",
-    imgSrc: assets.apple_earphone_image,
+    imgSrc: assets.hust_Tshirt_image,
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const products = [
     description: "Noise Cancellation, 24-hour battery",
     rating: 4.5,
     price: "$329.99",
-    imgSrc: assets.bose_headphone_image,
+    imgSrc: assets.hustlemobe1,
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ export const products = [
     description: "Fitness Tracking, AMOLED Display",
     rating: 4.5,
     price: "$799.99",
-    imgSrc: assets.samsung_s23phone_image,
+    imgSrc: assets.hustlemob2,
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ export const products = [
     description: "Noise Cancellation, 24-hour battery",
     rating: 4.5,
     price: "$349.99",
-    imgSrc: assets.venu_watch_image,
+    imgSrc: assets.hustlemob3,
   },
   {
     id: 5,
